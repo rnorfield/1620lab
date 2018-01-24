@@ -1,58 +1,153 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-	<title>My Bio</title>
-	<style type="text/css">
-		#textbox {
-			font-family: Arial;
-			background-color: #b3ff66;
-			color: #59b300;
-			display: block;
-			width: auto;
-			font-size: 30px;
-			text-align: center;
-			margin-bottom: 10px;
-		}
-		#textbox2 {
-			font-family: Arial;
-			background-color: #59b300;
-			color: #b3ff66;
-			display: block;
-			width: auto;
-			font-size: 30px;
-			text-align: center;
-			margin-bottom: 10px;
-			margin-top: 10px;
-		}
-		#pic {
-			padding: 20px;
-			background-color:  #66cc00;
-			display: inline-block;
-		}
-		#pictext{
-			font-size: 20px;
-			font-family: Arial;
-			display: inline-block;
-			vertical-align: 150px;
-			color: #f2ffe6;
-			background-color:  #66cc00;
-		}
-		#background {
-			background-color: #ccff99;
-		}
-	</style>
-</head>
-<body id="background">
-	<div id="textbox">My name is Ryan Norfield, nice to meet you!</div>
-	<div id="pictext">It's a doggo!</div>
-	<div id="pic"><img src="https://scontent.fyvr3-1.fna.fbcdn.net/v/t34.0-12/26754896_1418242511631291_494126865_n.jpg?oh=ffcf738a2b6dad8938f3491c364fc29b&oe=5A5A3165" height="300px" /></div>
-	<div id="pictext">It's a school logo!</div>
-	<div id="pic"><img src="https://pbs.twimg.com/profile_images/760519831447752704/TSR2vWSA.jpg" height="300px" /></div>
-	<div id="pictext">It's me!</div>
-	<div id="pic"><img src="https://cdn.discordapp.com/attachments/283470877377560576/401112384648904704/IMG_0140.jpg" height="300px" /></div>
-	<div id="textbox2">Stuff about me:</div>
-	<div id="textbox">I ski a lot during winter</div>
-	<div id="textbox2">I'm on my PC like 99% of the time</div>
-	<div id="textbox">And I have amazing doggo pets</div>
-</body>
+	<head>
+		<title>Tutorial 1 + 2</title>
+		<style type="text/css">
+			#myBG {
+				position: fixed;
+				left: 0px;
+				right: 0px;
+				width: 100vw;
+				height: 100vh;
+				object-fit: cover;
+				object-position: center;
+			}
+
+			#controls {
+				position: absolute;
+				left: 0px;
+				top: 30vh;
+			}
+
+			#img1 {
+				background-image: url(imgs/1.jpg);
+			}
+
+			#img2 {
+				background-image: url(imgs/2.jpg);
+				left:30px;
+			}
+
+			#img3 {
+				background-image: url(imgs/3.jpg);
+				left: 30px;
+			}
+
+			#img4 {
+				background-image: url(imgs/4.jpg);
+			}
+
+			.thumbnails {
+				width: 75px;
+				height: 75px;
+				background-color: red;
+				position: relative;
+				margin: 30px;
+				background-size: cover;
+				background-position: center;
+				opacity: 0.5;
+				border-radius: 75px;
+				border: 2px solid white;
+				transition: opacity 1s;
+			}
+			.thumbnails:hover {
+				opacity: 1;
+				transition: opacity 1s;
+			}
+
+			#info {
+				opacity: 0;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+				bottom: 0px;
+				margin: auto;
+				height: 50vh;
+				width: 60vw;
+				background-color: rgba(255,255,255,0.8);
+				transition: opacity 1s;
+				background-size;
+				
+			}
+
+			#infoimg {
+				width: 100%;
+				height: 90%;
+
+			}
+			#infotext {
+				width: 100%;
+				height: 20%;
+				padding: 10px;
+			}
+
+			#close {
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				background-color: red;
+				color: #FFF;
+				left: -12px;
+				top: 12px;
+				cursor: pointer;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+
+		<video id="myBG" autoplay loop>
+			<source src="imgs/bg.mp4" />
+		</video>
+		<div id="controls">
+			<div id="img1" class="thumbnails"></div>
+			<div id="img2" class="thumbnails"></div>
+			<div id="img3" class="thumbnails"></div>
+			<div id="img4" class="thumbnails"></div>
+		</div>
+		<div id="info">
+			<div id="infoimg"></div>
+			<div id="infotext"></div>
+			<div id="close">X</div>
+		</div>
+
+		<script type="text/javascript">
+			document.getElementById("img1").addEventListener("click", function(){
+				document.getElementById("infoimg").style.backgroundImage = "url(imgs/1.jpg)";
+				document.getElementById("infoimg").style.backgroundSize = "cover";
+				document.getElementById("infoimg").style.backgroundPosition = "center center"
+				document.getElementById("info").style.opacity = "1";
+				document.getElementById("infotext").innerHTML = "This here is a doggo."
+			});
+
+			document.getElementById("img2").addEventListener("click", function(){
+				document.getElementById("infoimg").style.backgroundImage = "url(imgs/2.jpg)";
+				document.getElementById("infoimg").style.backgroundSize = "cover";
+				document.getElementById("infoimg").style.backgroundPosition = "center center"
+				document.getElementById("info").style.opacity = "1";
+				document.getElementById("infotext").innerHTML = "This here is a doggo with his tongue out."
+			});
+
+			document.getElementById("img3").addEventListener("click", function(){
+				document.getElementById("infoimg").style.backgroundImage = "url(imgs/3.jpg)";
+				document.getElementById("infoimg").style.backgroundSize = "cover";
+				document.getElementById("infoimg").style.backgroundPosition = "center center"
+				document.getElementById("info").style.opacity = "1";
+				document.getElementById("infotext").innerHTML = "This here is a mischeivous pupper."
+			});
+
+			document.getElementById("img4").addEventListener("click", function(){
+				document.getElementById("infoimg").style.backgroundImage = "url(imgs/4.jpg)";
+				document.getElementById("infoimg").style.backgroundSize = "cover";
+				document.getElementById("infoimg").style.backgroundPosition = "center center"
+				document.getElementById("info").style.opacity = "1";
+				document.getElementById("infotext").innerHTML = "This here is another pupper."
+			});
+
+			document.getElementById("close").addEventListener("click", function(){
+				document.getElementById("info").style.opacity = "0";
+			});
+		</script>
+	</body>
 </html>
